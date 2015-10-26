@@ -3,10 +3,16 @@
 //data structures?
 
 function allUnique(string) {
+  var uniques = {};
   for (var i = 0; i < string.length; i++) {
-    if (string.indexOf(string[i]) !== -1) {
+    if (string[i] in uniques) {
       return false;
+    } else {
+      uniques[string[i]] = true;
     }
   }
   return true;
 }
+
+console.log(allUnique("star"));
+console.log(allUnique("sister"));
