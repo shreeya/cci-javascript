@@ -18,13 +18,14 @@ function arrayToBst(a) {
     if (end < start) {
       return undefined;
     }
-    var middle = (start+end)/2;
+    var middle = Math.floor((start+end)/2);
     var node = new Tree(a[middle]);
     node.left = createTree(a, start, middle-1);
     node.right = createTree(a, middle+1, end);
     return node;
   }
-  createTree(a, 0, a.length-1);
+  return createTree(a, 0, a.length-1);
 }
 
 console.log(arrayToBst([1, 2, 3, 4, 5, 6, 7]));
+console.log(arrayToBst([1, 2, 3, 4, 5, 6]));
